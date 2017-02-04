@@ -1,0 +1,21 @@
+
+.button
+{
+-fx-background-color: 
+        #000000,
+        linear-gradient(#7ebcea, #2f4b8f),
+        linear-gradient(#426ab7, #263e75),
+        linear-gradient(#395cab, #223768);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 5 8 5 8;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+}
+#lview
+{
+-fx-font-size: 32px;
+   -fx-font-family: "Arial Black";
+   -fx-text-fill: #847C24;
+   -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.9) , 6, 0.0 , 0 , 2 );
+}
