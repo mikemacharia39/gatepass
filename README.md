@@ -1,10 +1,10 @@
 # gatepass
-This is a JavaFX project that integrates Bio-metric technology using arduino and fingerprint reader with JavaFX code to check 
+This is a JavaFX project that integrates Bio-metric technology using arduino and fingerprint reader with JavaFX to check 
 if a user is part of the institution
 
 The Biometric Security Check for The Gate Pass and Access to the Examinations Office is a system that uses an individual’s fingerprint 
 as means of accessing a particular area. This means that a person’s particular finger acts as his/ her identification. 
-Each individual is registered and records placed in a central database.
+Each individual is registered and records placed in a database.
 
 <table>
    <tr>
