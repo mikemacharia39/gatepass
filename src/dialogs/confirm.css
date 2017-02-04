@@ -1,0 +1,45 @@
+.label
+{
+	-fx-font-size: 12px;
+    -fx-text-fill: #000000;
+}
+#green {
+    -fx-background-color:
+        linear-gradient(#f0ff35, #a9ff00),
+        radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-text-fill: #395306;
+    -fx-font-size: 13px;
+    -fx-padding: 3 6 3 6;
+}
+#green:hover{
+     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+#red {
+    -fx-font-size: 13px;
+    -fx-background-color: linear-gradient(#ff5400, #be1d00);
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+    -fx-padding: 3 6 3 6;
+}
+#red:hover {
+     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+#blue {
+   -fx-background-color: 
+        #000000,
+        linear-gradient(#7ebcea, #2f4b8f),
+        linear-gradient(#426ab7, #263e75),
+        linear-gradient(#395cab, #223768);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 5 10 5 10;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+}
+#blue:hover {
+   /* -fx-background-color: linear-gradient(#4994DE, #137393); */
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5) , 5, 0.0 , 0 , 1 );
+}

@@ -1,0 +1,36 @@
+#hboxcolor
+{
+    -fx-background-radius:0;
+	-fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-background-color: linear-gradient(#E4E9A9, #9CD777);
+    -fx-padding:10px;
+}
+#hboxcolor1
+{ 
+ -fx-background-radius:0;
+	-fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-background-color:#63A842;
+    -fx-padding:10px;
+}
+.button {
+   -fx-background-color: 
+        #000000,
+        linear-gradient(#7ebcea, #2f4b8f),
+        linear-gradient(#426ab7, #263e75),
+        linear-gradient(#395cab, #223768);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 7 10 7 10;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+}
+.button:hover {
+   /* -fx-background-color: linear-gradient(#4994DE, #137393); */
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5) , 5, 0.0 , 0 , 1 );
+}
