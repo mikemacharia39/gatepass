@@ -1,4 +1,6 @@
 # gatepass
+This was my fourth year project.
+
 This is a JavaFX project that integrates Bio-metric technology using arduino and fingerprint reader with JavaFX to check 
 if a user is part of the institution
 
