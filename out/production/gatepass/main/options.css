@@ -1,0 +1,31 @@
+
+root
+{
+ -fx-background-color: linear-gradient(#E4EAA2, #9CD672);
+}
+.root
+{ 
+-fx-background-color: linear-gradient(#E4EAA2, #9CD672);
+}
+.label
+{
+    -fx-background-color: linear-gradient(#E4EAA2, #9CD672);
+}
+.button {
+    -fx-background-color: 
+        #000000,
+        linear-gradient(#7ebcea, #2f4b8f),
+        linear-gradient(#426ab7, #263e75),
+        linear-gradient(#395cab, #223768);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 4 10 4 10; 
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    /*-fx-background-color: linear-gradient(#EBF00D, #46DD20); 
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); */
+}
+
+.button:hover {
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.8) , 5, 0.0 , 0 , 1 );
+}

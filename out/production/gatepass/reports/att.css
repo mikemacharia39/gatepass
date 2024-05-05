@@ -1,0 +1,28 @@
+
+.button
+{
+-fx-background-color: 
+        #000000,
+        linear-gradient(#7ebcea, #2f4b8f),
+        linear-gradient(#426ab7, #263e75),
+        linear-gradient(#395cab, #223768);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 5 8 5 8;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+}
+
+.button:hover {
+   /* -fx-background-color: linear-gradient(#4994DE, #137393); */
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5) , 5, 0.0 , 0 , 1 );
+}
+
+#vb
+{
+-fx-background-color: linear-gradient(#E4EAA2, #9CD672); 
+}
+#uppername
+{
+-fx-font-size: 19px;
+}

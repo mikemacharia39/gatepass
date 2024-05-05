@@ -1,0 +1,59 @@
+
+.root
+{
+-fx-background-color: linear-gradient(#E4EAA2, #9CD672);
+}
+.button {
+    -fx-background-color: 
+        #000000,
+        linear-gradient(#7ebcea, #2f4b8f),
+        linear-gradient(#426ab7, #263e75),
+        linear-gradient(#395cab, #223768);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 8 16 8 16; 
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    /*-fx-background-color: linear-gradient(#EBF00D, #46DD20); 
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); */
+}
+
+.button:hover {
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.8) , 5, 0.0 , 0 , 1 );
+}
+
+#errormessage {
+  -fx-alignment-baseline:central;
+  -fx-fill: FIREBRICK;
+  -fx-font-weight: bold;
+  -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );  
+}
+#scroll_main{
+     -fx-background-color: linear-gradient(#E4EAA2, #9CD672);
+}
+
+.list-cell
+{
+    -fx-background-color:#D1D1D1;
+    -fx-font-size: 17px; 
+}
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(#328BDB 0%, #207BCF 25%, #1973C9 75%, #0A65BF 100%);
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+}
+
+.list-cell:even { /* <=== changed to even */
+    -fx-background-color: white;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #0093ff;
+    -fx-text-fill: white;
+}
+#welText {
+   -fx-font-size: 30px;
+   -fx-font-family: "Cooper Black";
+   -fx-fill: #847C24;
+   -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.9) , 6, 0.0 , 0 , 2 );
+}

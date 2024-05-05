@@ -5,9 +5,9 @@
 package backup;
 
 /**
- *
  * @author Mikehenry
  */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,7 +24,7 @@ public class Backup {
     private static ResultSet res;
     private static Connection con;
     private Statement st;
-    private int BUFFER = 99999;
+    private final int BUFFER = 99999;
 
     public String getData(String host, String port, String user, String password, String db) {
         String Mysqlpath = getMysqlBinPath(user, password, db);
@@ -45,7 +45,6 @@ public class Backup {
         }
 
 
-
         System.out.println(Mysqlpath);
         Process run = null;
         try {
@@ -54,7 +53,6 @@ public class Backup {
         } catch (IOException ex) {
             // Logger.getLogger(Backup.class.getName()).log(Level.SEVERE, null, ex);
         }
-
 
 
         InputStream in = run.getInputStream();
@@ -100,7 +98,6 @@ public class Backup {
             System.out.print("Mikehenry");
             e.printStackTrace();
         }
-
 
 
         String a = "";

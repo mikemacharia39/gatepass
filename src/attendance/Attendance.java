@@ -1,15 +1,8 @@
 package attendance;
 
-import javafx.application.Application;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 import database.DBConnect;
 import dialogs.ErrorMessage;
+import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Service;
@@ -17,6 +10,8 @@ import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.scene.Group;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TableColumn;
@@ -25,14 +20,22 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 
 public class Attendance extends Application {
 
     final GetDailySalesService service = new GetDailySalesService();
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
-	private void init(Stage primaryStage) {
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    private void init(Stage primaryStage) {
         Group root = new Group();
         primaryStage.setScene(new Scene(root));
 
@@ -40,12 +43,7 @@ public class Attendance extends Application {
         vbox.setPadding(new Insets(12));
         TableView tableView = new TableView();
         Button button = new Button("Refresh");
-        button.setOnAction(new EventHandler<ActionEvent>() {
-
-            public void handle(ActionEvent t) {
-                service.restart();
-            }
-        });
+        button.setOnAction(t -> service.restart());
         vbox.getChildren().addAll(tableView, button);
 
         Region veil = new Region();
@@ -83,6 +81,12 @@ public class Attendance extends Application {
         service.start();
     }
 
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        init(primaryStage);
+        primaryStage.show();
+    }
+
     /**
      * A service for getting the DailySales data. This service exposes an
      * ObservableList for convenience when using the service. This
@@ -98,46 +102,43 @@ public class Attendance extends Application {
          *
          * @return A task
          */
-        @SuppressWarnings({ "unchecked", "rawtypes" })
-		@Override
+        @SuppressWarnings({"unchecked", "rawtypes"})
+        @Override
         protected Task createTask() {
             return new GetDailySalesTask();
         }
     }
 
-    public class GetDailySalesTask extends Task<ObservableList<DailySales>> {       
-        @Override protected ObservableList<DailySales> call() throws Exception {
+    public class GetDailySalesTask extends Task<ObservableList<DailySales>> {
+        @Override
+        protected ObservableList<DailySales> call() throws Exception {
             for (int i = 0; i < 500; i++) {
                 updateProgress(i, 500);
                 Thread.sleep(20);
             }
             ObservableList<DailySales> sales = FXCollections.observableArrayList();
-            String sql="SELECT first_name, school_id, type FROM  gateentry";
-            			try {
-            		    	DBConnect.connect();
-            				ResultSet rec = DBConnect.stmt.executeQuery(sql);
-            				while((rec!=null) && (rec.next()))
-            				{ 
-            					String name = (rec.getString("first_name"));
-            					String adm = (rec.getString("school_id"));
-            					String timein = (rec.getString("type"));
-            					
-            					
-            					sales.add(new DailySales(name,adm,timein));
-            				}
-            				rec.close();
-            				} catch (SQLException ea) {
-            				ErrorMessage.display("Launching Error", ea.getMessage()+ "Database Communications Link Failure");
-            				ea.printStackTrace();
-            				}
-            			catch (Exception e) {
-            				ErrorMessage.display("Launching Error", e.getMessage());
-            				e.printStackTrace();
-            				}
-            
-            
-            
-            
+            String sql = "SELECT first_name, school_id, type FROM  gateentry";
+            try {
+                DBConnect.connect();
+                ResultSet rec = DBConnect.stmt.executeQuery(sql);
+                while ((rec != null) && (rec.next())) {
+                    String name = (rec.getString("first_name"));
+                    String adm = (rec.getString("school_id"));
+                    String timein = (rec.getString("type"));
+
+
+                    sales.add(new DailySales(name, adm, timein));
+                }
+                rec.close();
+            } catch (SQLException ea) {
+                ErrorMessage.display("Launching Error", ea.getMessage() + "Database Communications Link Failure");
+                ea.printStackTrace();
+            } catch (Exception e) {
+                ErrorMessage.display("Launching Error", e.getMessage());
+                e.printStackTrace();
+            }
+
+
             //sales.add(new DailySales(1, 5000, new Date()));
             //sales.add(new DailySales(2, 2473, new Date(0)));
             return sales;
@@ -159,36 +160,30 @@ public class Attendance extends Application {
             this.date = date;
         }
 
-		public String getDailySalesId() {
-			return dailySalesId;
-		}
+        public String getDailySalesId() {
+            return dailySalesId;
+        }
 
-		public void setDailySalesId(String dailySalesId) {
-			this.dailySalesId = dailySalesId;
-		}
+        public void setDailySalesId(String dailySalesId) {
+            this.dailySalesId = dailySalesId;
+        }
 
-		public String getQuantity() {
-			return quantity;
-		}
+        public String getQuantity() {
+            return quantity;
+        }
 
-		public void setQuantity(String quantity) {
-			this.quantity = quantity;
-		}
+        public void setQuantity(String quantity) {
+            this.quantity = quantity;
+        }
 
-		public String getDate() {
-			return date;
-		}
+        public String getDate() {
+            return date;
+        }
 
-		public void setDate(String date) {
-			this.date = date;
-		}
+        public void setDate(String date) {
+            this.date = date;
+        }
 
-        
+
     }
-
-    @Override public void start(Stage primaryStage) throws Exception {
-        init(primaryStage);
-        primaryStage.show();
-    }
-    public static void main(String[] args) { launch(args); }
 }
